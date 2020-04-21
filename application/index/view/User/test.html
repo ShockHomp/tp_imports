@@ -1,0 +1,24 @@
+<!-- <link rel="stylesheet" href="__CSS__/style.css"> -->
+<link rel="stylesheet" href="/static/css/style.css">
+<p>高材生{literal}{$name}{/literal}</p>
+<p>高材生{$Think.cookie.siteName}</p>
+<p>高材生{$Think.get.id}</p>
+<p>高材生{$Think.const.CONF_PATH}</p>
+<p>{$Request.host}</p>
+<p>{$Request.pathinfo}</p>
+<p>{$Request.ext}</p>
+<p>{$Request.ip}</p>
+<p>{$Request.module}</p>
+<p>{$Request.controller}</p>
+<p>{$Request.action}</p>
+<p>{$domain|md5}</p>
+<p>{$birthday|date='Y/m/d',###}</p>
+<p>{$domain|substr=4}</p>
+<p>{$domain|substr=4,3}</p>
+<p>函数直接调用 即域名的后缀{:substr($domain,-2,2)}</p>
+<p>管道调用:{:md5(substr($domain,-2,2))}</p>
+<p>{$Think.get.id|getHiredate|date='Y/m/d',###}</p>
+<p>{:getHiredate(78)}</p>
+{两种注释方法}
+{/*php.cn*/}
+{//php.cn}
