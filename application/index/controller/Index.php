@@ -48,6 +48,13 @@ class Index
 //        dump($updateDb);
         dump(Db::getTableInfo('shopping_buyer_users', 'type'));//获取 表字段类型
         dump(Db::getTableInfo('shopping_buyer_users', 'pk'));//获取主键
+       $failEx= Db::name('buyer_users')
+            ->where(['shop_id' => 10000])
+            ->failException(false)   //fetchSql(true) 打印SQL语句或者直接在调试工具里面可以看到SQL语句
+            ->select();//（加上false 表示如果数据不存在，返回空数组，不抛出异常）
+       dump($failEx);//如果没有数据直接抛出异常 表数据不存在:shopping_buyer_users
+        //查询条件 where('字段名','表达式','查询条件'); whereOr('字段名','表达式','查询条件');
+
 //		return '<style type="text/css">*{ padding: 0; margin: 0; } .think_default_text{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p> ThinkPHP V5<br/><span style="font-size:30px">十年磨一剑 - 为API开发设计的高性能框架</span></p><span styl="font-size:22px;">[ V5.0 版本由 <a href="http://www.qiniu.com" target="qiniu">七牛云</a> 独家赞助发布 ]</span></div><script type="text/javascript" src="https://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script><script type="text/javascript" src="https://e.topthink.com/Public/static/client.js"></script><think id="ad_bd568ce7058a1091"></think>';
 	}
 	public function indexTest(){
