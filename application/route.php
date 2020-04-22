@@ -7,13 +7,15 @@
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
-// | Author: liu21st <liu21st@920929621.com/2020/4/22/11hour>
+
+// | Author: liu21st <liu21st@920929621.com/2020/4/22/12hour>
+
 // +----------------------------------------------------------------------
 
 // 设置name变量规则（采用正则定义）
 use think\Route;
 use think\Request;
-use think\Response;
+use think\Db
 // Route::pattern('name','\w+');
 // 支持批量添加
 Route::pattern([
