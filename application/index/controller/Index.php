@@ -5,15 +5,49 @@ use think\cache\driver\Memcache;
 use think\Db;
 use think\Config;
 use think\Url;
-//use think\Responsewww;
+//use think\Response;
 class Index
 {
 	public function index()
 	{
 //	    return config('app_status');
         //获取请求参数配置
-        $request = Request::instance();
-        dump($request->param( ));
+//        $request = Request::instance();
+//        dump($request->param( ));
+//        原生SQL查询第一种
+//        $sqlUser=Db::query('select * from shopping_buyer_users where id=?',[4]);
+//        $sqlUser=Db::query('select * from shopping_buyer_users where id=:id',['id'=>13]);
+//        $sqlUser=Db::query('select * from shopping_buyer_users where id=:id',['id'=>13]);
+//        可以使用多个数据库连接，使用
+//        Db::connect($config)->query('select * from shopping_buyer_users where id=:id',['id'=>4]);
+//查询构造器
+//        $sqlUser=Db::table('shopping_buyer_users')->where('id',13)->select();//find()单条数据
+//        $sqlUser=db('buyer_users',[],false)->where('id',4)->find();//可以使用db函数
+//        dump($sqlUser);
+        $query = new \think\db\Query();//使用查询对象的方式进行查询
+        $query->table('shopping_buyer_users')->where('id',13);
+//       dump(Db::find($query)) ;
+//        Db::table('shopping_buyer_users')->chunk(2, function($users) {
+//            // 处理结果集...
+//            dump($users);
+////            return false;
+//        });
+        // 查询JSON类型字段 （info字段为json类型）
+//        Db::table('shopping_buyer_users')->where('info$.email','thinkphp@qq.com')->find();
+        $data = [
+            ['openid' => 'ojvXN4q458ffOfDEMph-xJS3cc55', 'shop_id' => '1'],
+            ['openid' => 'ojvXN4q458ffOfDEMph-xJS3cc56', 'shop_id' => '2'],
+            ['openid' => 'ojvXN4q458ffOfDEMph-xJS3cc57', 'shop_id' => '3'],
+            ['openid' => 'ojvXN4q458ffOfDEMph-xJS3cc58', 'shop_id' => '4'],
+        ];
+//        Db::name('buyer_users')->insertAll($data);//批量添加数据insertAll
+        // 添加多条数据
+//        dump(db('buyer_users')->insertAll($data));//用助手函数批量添加数据
+        //延时更新的操作
+//        $updateDb=Db::table('shopping_buyer_users')->where('id', 2409)->setInc('shop_id', 2, 3);
+//        dump($updateDb);
+        dump(Db::getTableInfo('shopping_buyer_users', 'type'));//获取 表字段类型
+        dump(Db::getTableInfo('shopping_buyer_users', 'pk'));//获取主键
 //		return '<style type="text/css">*{ padding: 0; margin: 0; } .think_default_text{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p> ThinkPHP V5<br/><span style="font-size:30px">十年磨一剑 - 为API开发设计的高性能框架</span></p><span styl="font-size:22px;">[ V5.0 版本由 <a href="http://www.qiniu.com" target="qiniu">七牛云</a> 独家赞助发布 ]</span></div><script type="text/javascript" src="https://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script><script type="text/javascript" src="https://e.topthink.com/Public/static/client.js"></script><think id="ad_bd568ce7058a1091"></think>';
 	}
 	public function indexTest(){

@@ -57,7 +57,7 @@ Route::pattern([
 //Route::controller('index','index/index');//给index控制器设置快捷路由 (相当于直接建立了5个路由 getInfo getPhone ,postInfo ,putInfo,deleteInfo)
 //Route::any('new/:id/[:name]', 'index/Index/index?status=1&app_id=5', ['method' => 'post|get'], ['ext' => 'html'], ['before_behavior' => '\application\index\behavior\UserCheck']);//隐式传入参数在URL不显示
 //Route::alias("index",'index/Index');//可以访问index模块index控制器内的任意方法
-Route::rule('index/:id','index/index/url');
+Route::rule('index/:id','index/index/index');
 Route::get("hello/:name/:pwd",function($name,$pwd){
     return 'this is GitHub username :'.$name."<br>"."password:".md5($pwd);
 });//定义一些特殊需求，不执行控制器的方法了。
