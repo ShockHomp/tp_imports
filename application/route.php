@@ -15,7 +15,7 @@
 // 设置name变量规则（采用正则定义）
 use think\Route;
 use think\Request;
-use think\Db
+
 // Route::pattern('name','\w+');
 // 支持批量添加
 Route::pattern([
