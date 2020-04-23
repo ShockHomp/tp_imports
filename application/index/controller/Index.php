@@ -2,6 +2,7 @@
 
 namespace app\index\controller;
 
+use app\index\model\BuyerUsers;
 use think\Request;
 use think\cache\driver\Memcache;
 use think\Db;
@@ -94,25 +95,47 @@ class Index
 ###############    （监听失败？
 //5.0支持存储过程，如果我们定义了一个数据库存储过程sp_query，可以使用下面的方式调用：
 //        $result = Db::query('call sp_query(8)');
+<<<<<<< HEAD
 		return '<style type="text/css">*{ padding: 0; margin: 0; } .think_default_text{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p> ThinkPHP V5<br/><span style="font-size:30px">十年磨一剑 - 为API开发设计的高性能框架</span></p><span styl="font-size:22px;">[ V5.0 版本由 <a href="http://www.qiniu.com" target="qiniu">七牛云</a> 独家赞助发布 ]</span></div><script type="text/javascript" src="https://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script><script type="text/javascript" src="https://e.topthink.com/Public/static/client.js"></script><think id="ad_bd568ce7058a1091"></think>';
+=======
+        //闭包查询方法（推荐使用闭包查询包括两种方法）
+        $openid = 'ojvXN4q458ffOfDEMph-xJS3cc58';
+        $id = '2407';
+//        $bbDb=Db::table('shopping_buyer_users')->select(function($query) use($openid,$id){
+//            $query->where('openid',$openid)
+//                ->whereOr('id','>',$id);
+//        });
+        $bbDb = Db::select(function ($query) use ($openid, $id) {
+            $query->table('shopping_buyer_users')->where('openid', $openid)->whereOr('id', '>', $id);
+        });
+        //列多列数据，和数组中键值设置cloumn
+        $columnDb = Db::table('shopping_buyer_users')->where('openid', $openid)->column('id,openid,shop_id');
+        dump($columnDb);
+//        dump($bbDb);
+//		return '<style type="text/css">*{ padding: 0; margin: 0; } .think_default_text{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p> ThinkPHP V5<br/><span style="font-size:30px">十年磨一剑 - 为API开发设计的高性能框架</span></p><span styl="font-size:22px;">[ V5.0 版本由 <a href="http://www.qiniu.com" target="qiniu">七牛云</a> 独家赞助发布 ]</span></div><script type="text/javascript" src="https://tajs.qq.com/stats?sId=9347272" charset="UTF-8"></script><script type="text/javascript" src="https://e.topthink.com/Public/static/client.js"></script><think id="ad_bd568ce7058a1091"></think>';
+>>>>>>> ff0cc3029398161c0328e4d5b1dbdb9df1f5fb1a
     }
 
-    public function indexTest()
+    public
+    function indexTest()
     {
         return response('this is  index/test');
     }
 
-    public function login($name)
+    public
+    function login($name)
     {
         return 'this is login';
     }
 
-    public function hello()
+    public
+    function hello()
     {
         return 'this is hello';
     }
 
-    public function request($id = '1', $name = 'lirongyu')
+    public
+    function request($id = '1', $name = 'lirongyu')
     {
         // return 'request';
         $request = Request::instance()->module('index');
@@ -200,7 +223,8 @@ class Index
     }
 
 
-    public function m4()
+    public
+    function m4()
     {
         $Cache = new Memcache();
         $Cache->set('test', 'swdss', 3600);  //这是存某个值，后面的3600为有效时间
@@ -218,7 +242,8 @@ class Index
 
     }
 
-    public function m88()
+    public
+    function m88()
     {
         echo '82q';
         $Cache = new Memcache();
@@ -248,7 +273,8 @@ class Index
         //参数基本使用
     }
 
-    public function search()
+    public
+    function search()
     {
         // table方法必须指定完整的数据表名
         // $findDb=Db::table('user')->where('user_id',1)->find();
@@ -425,6 +451,60 @@ class Index
     {
 
         return Url::build('index/index/index', 'id=5&name=thinkphp');
+    }
+
+    //实例化创建表的
+    public function buyerUsers()
+    {
+        //1实例化创建模型对象
+//        $buyerUsers = new BuyerUsers();
+//        $result = $buyerUsers->where('id', '2409')->select();
+//        dump($result[0]->GetData());
+        //静态方法获取
+//        $result = BuyerUsers::get(2409)->getUser();
+//        dump($result);
+        //批量添加数据 saveAll()
+//        $buyerUsers=new  BuyerUsers();
+//        $data=[
+//            ['openid'=>'ojvXN4q458ffOfDEMph-xJS3cc61','shop_id'=>'100'],
+//            ['openid'=>'ojvXN4q458ffOfDEMph-xJS3cc62','shop_id'=>'101'],
+//            ['openid'=>'ojvXN4q458ffOfDEMph-xJS3cc63','shop_id'=>'102'],
+//        ];
+//        $result=$buyerUsers->saveAll($data);
+//        dump($result);
+//        BuyerUsers::create(['openid'=>'ojvXN4q458ffOfDEMph-xJS3cc69','shop_id'=>'100']);//insert into
+        //静态调用。效率最高
+        //静态方法更新
+        $id = 2418;
+        $data = ['openid' => 'ojvXN4q458ffOfDEMph-xJS3cc70', 'shop_id' => '1001'];
+//        $where = ['id' => 2418];
+//        $where = function($query)use($id){
+//            $query->where('id',$id);
+//        };
+//        $field = ['shop_id', 'openid'];
+//        $result = BuyerUsers::update($data, $where, $field);
+//        dump($result->getData());
+        //静态查询 方法单条 (find ,get) 多条 （all,select） (建议以后使用get,all)
+//        $where = function ($query) {
+//            $query->field(['shop_id', 'openid'])->where('id', '>', '2416');
+//        };
+//        $result = buyerUsers::all($where);
+//        dump($result);
+//        delete 删除操作（ delete()括号里面无参数）（实例化调用）
+//        destory 删除操作（静态调用）
+//        $where = function ($query) {
+//            $query->where('openid', 'like', 'ojvXN4q458ffOfDEMph-xJS3cc5%')->whereOr('id', '>', '3000');
+//        };
+//        dump(BuyerUsers::all($where));
+//        $result = BuyerUsers::($where);
+//        $buyerUsers = BuyerUsers::get(2418);
+//        return $buyerUsers->openid;//调用模型中的修改器
+        $buyerUsers = new BuyerUsers();
+        $buyerUsers->openid = 'ss';
+        $buyerUsers->save();//(只有save()方法可以调用修改器)除了赋值的方式可以触发修改器外，还可以用下面的方法批量触发修改器：
+        return '修改openid为'.$buyerUsers->openid;
+
+
     }
 
 
