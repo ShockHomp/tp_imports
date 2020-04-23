@@ -453,13 +453,55 @@ class Index
     public function buyerUsers()
     {
         //1实例化创建模型对象
-        $buyerUsers = new BuyerUsers();
-        $result = $buyerUsers->where('id', '2409')->select();
-        dump($result[0]->GetData());
+//        $buyerUsers = new BuyerUsers();
+//        $result = $buyerUsers->where('id', '2409')->select();
+//        dump($result[0]->GetData());
         //静态方法获取
-        $result = BuyerUsers::get(2409)->getUser();
-        dump($result);
+//        $result = BuyerUsers::get(2409)->getUser();
+//        dump($result);
+        //批量添加数据 saveAll()
+//        $buyerUsers=new  BuyerUsers();
+//        $data=[
+//            ['openid'=>'ojvXN4q458ffOfDEMph-xJS3cc61','shop_id'=>'100'],
+//            ['openid'=>'ojvXN4q458ffOfDEMph-xJS3cc62','shop_id'=>'101'],
+//            ['openid'=>'ojvXN4q458ffOfDEMph-xJS3cc63','shop_id'=>'102'],
+//        ];
+//        $result=$buyerUsers->saveAll($data);
+//        dump($result);
+//        BuyerUsers::create(['openid'=>'ojvXN4q458ffOfDEMph-xJS3cc69','shop_id'=>'100']);//insert into
+        //静态调用。效率最高
+        //静态方法更新
+        $id = 2418;
+        $data = ['openid' => 'ojvXN4q458ffOfDEMph-xJS3cc70', 'shop_id' => '1001'];
+//        $where = ['id' => 2418];
+//        $where = function($query)use($id){
+//            $query->where('id',$id);
+//        };
+//        $field = ['shop_id', 'openid'];
+//        $result = BuyerUsers::update($data, $where, $field);
+//        dump($result->getData());
+        //静态查询 方法单条 (find ,get) 多条 （all,select） (建议以后使用get,all)
+//        $where = function ($query) {
+//            $query->field(['shop_id', 'openid'])->where('id', '>', '2416');
+//        };
+//        $result = buyerUsers::all($where);
+//        dump($result);
+//        delete 删除操作（ delete()括号里面无参数）（实例化调用）
+//        destory 删除操作（静态调用）
+//        $where = function ($query) {
+//            $query->where('openid', 'like', 'ojvXN4q458ffOfDEMph-xJS3cc5%')->whereOr('id', '>', '3000');
+//        };
+//        dump(BuyerUsers::all($where));
+//        $result = BuyerUsers::($where);
+//        $buyerUsers = BuyerUsers::get(2418);
+//        return $buyerUsers->openid;//调用模型中的修改器
+        $buyerUsers = new BuyerUsers();
+        $buyerUsers->openid = 'ss';
+        $buyerUsers->save();//(只有save()方法可以调用修改器)除了赋值的方式可以触发修改器外，还可以用下面的方法批量触发修改器：
+        return '修改openid为'.$buyerUsers->openid;
+
 
     }
+
 
 }
