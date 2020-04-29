@@ -83,7 +83,7 @@ class Index
 //        dump($viewDb);
         //原生更新SQL 采用占位符方式更加安全
         //Db::execute("update think_user set name=:name where status=:status",['name'=>'thinkphp','status'=>1])
-        //打印SQL几种方式 select(false) buildSql()
+        //打印SQL几种（三种）方式 select(false) buildSql() fetchSql(true)
 ###############
 //        Db::listen(function($sql, $time, $explain){
 //            // 记录SQL
@@ -130,6 +130,7 @@ class Index
     {
         return 'this is hello';
     }
+
 
     public
     function request($id = '1', $name = 'lirongyu')
