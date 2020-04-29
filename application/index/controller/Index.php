@@ -500,7 +500,7 @@ class Index
         $buyerUsers = new BuyerUsers();
         $buyerUsers->openid = 'ss';
 //        $buyerUsers->save();//(只有save()方法可以调用修改器)除了赋值的方式可以触发修改器外，还可以用下面的方法批量触发修改器：
-        return '修改openid为'.$buyerUsers->openid;
+        return '修改openid为' . $buyerUsers->openid;
 
 
     }

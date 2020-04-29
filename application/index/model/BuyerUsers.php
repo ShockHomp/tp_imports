@@ -6,7 +6,7 @@ class BuyerUsers extends Model{
     public function getUser(){
         return $this->getData('openid');
     }
-    //读取器( 当在控制器调用相应字段时，自动找到该对应的读取器，$data 为控制中查询的一个数组 )
+    //读取器( 当在控制器调用相应字段时，自动找到该对应的读取器，$data 为控制中查询的一个数组 )  //也可以自定义 字段
     protected function getOpenidAttr($openid,$data){
         return $openid;//需要的话还可以返回data中的数据如data['shop_id']
     }
@@ -14,4 +14,8 @@ class BuyerUsers extends Model{
     public function setOpenidAttr($openid){
         return $openid='xsm';
     }
+
+
+
+
 }
