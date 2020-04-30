@@ -173,3 +173,4 @@ Route::group('demo', [//分组名称
 //bind 路由自动绑定（绑定命名空间和类的话直接跳过模块配置文件）
 //Route::bind("index/test");
 
+

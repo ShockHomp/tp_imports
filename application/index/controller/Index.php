@@ -3,6 +3,7 @@
 namespace app\index\controller;
 
 use app\index\model\BuyerUsers;
+use app\index\model\Category;
 use think\Request;
 use think\cache\driver\Memcache;
 use think\Db;
@@ -475,6 +476,8 @@ class Index
         //静态方法更新
         $id = 2418;
         $data = ['openid' => 'ojvXN4q458ffOfDEMph-xJS3cc70', 'shop_id' => '1001'];
+        //获取提交数据，自动过滤空值
+//        $data=array_filter($request->param());
 //        $where = ['id' => 2418];
 //        $where = function($query)use($id){
 //            $query->where('id',$id);
@@ -503,6 +506,11 @@ class Index
         return '修改openid为' . $buyerUsers->openid;
 
 
+    }
+
+
+    public function category(){
+        dump(Category::getCate()) ;
     }
 
 
