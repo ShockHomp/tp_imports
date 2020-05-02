@@ -58,6 +58,7 @@ Route::pattern([
 //Route::any('new/:id/[:name]', 'index/Index/index?status=1&app_id=5', ['method' => 'post|get'], ['ext' => 'html'], ['before_behavior' => '\application\index\behavior\UserCheck']);//隐式传入参数在URL不显示
 //Route::alias("index",'index/Index');//可以访问index模块index控制器内的任意方法
 Route::rule('index/:id','index/index/index');
+Route::rule('index/tp0502','index/index/tp0502');
 Route::get("hello/:name/:pwd",function($name,$pwd){
     return 'this is GitHub username :'.$name."<br>"."password:".md5($pwd);
 });//定义一些特殊需求，不执行控制器的方法了。

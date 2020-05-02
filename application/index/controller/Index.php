@@ -109,7 +109,7 @@ class Index
         });
         //列多列数据，和数组中键值设置cloumn
         $columnDb = Db::table('shopping_buyer_users')->where('openid', $openid)->column('id,openid,shop_id');
-        dump($columnDb);
+//        dump($columnDb);
 //        dump($bbDb);
 
     }
@@ -511,6 +511,17 @@ class Index
 
     public function category(){
         dump(Category::getCate()) ;
+    }
+
+    public function tp0502()
+    {
+//        dump(Config::get('default_lang'));Config::has('default_lang');
+        if(config('?database')){  //还可以配置参数方式 查询配置项是否存在
+            echo '配置存在';
+        }
+        //动态设置config
+//        dump(Config::set('app_debug',true));
+
     }
 
 
