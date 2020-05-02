@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a8987fc-bc75-4781-9990-d24be4033fed" name="Default Changelist" comment="9hour">
+      <change beforePath="$PROJECT_DIR$/application/common/model/Cart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/index/controller/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/controller/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/model/BuyerUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/model/BuyerUsers.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,22 +54,22 @@
     <session id="-1685133006">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="7" />
+          <entry key="php" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="7" />
+          <entry key="PHP" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="533" />
+          <entry key="php" value="916" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="533" />
+          <entry key="PHP" value="916" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -97,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="522" column="36" selection-start-line="522" selection-start-column="36" selection-end-line="522" selection-end-column="36" />
+            <state relative-caret-position="193">
+              <caret line="530" column="63" lean-forward="true" selection-start-line="530" selection-start-column="63" selection-end-line="530" selection-end-column="63" />
               <folding>
                 <element signature="e#40#71#0#PHP" expanded="true" />
               </folding>
@@ -106,10 +107,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-450">
+            <state relative-caret-position="-477">
               <caret line="107" column="42" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
             </state>
           </provider>
@@ -124,11 +134,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/index/model/BuyerUsers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="240">
+              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/model/Cart.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/index/model/Goods.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -138,27 +166,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2580">
               <caret line="101" column="2" selection-start-line="101" selection-start-column="2" selection-end-line="101" selection-end-column="2" />
-              <folding>
-                <element signature="e#39#54#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/index/controller/behavior.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/index/controller/Hook.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding>
                 <element signature="e#39#54#0#PHP" expanded="true" />
               </folding>
@@ -182,11 +189,11 @@
       <find>fields_strict</find>
       <find>sql</find>
       <find>resultset</find>
-      <find>resultset_type</find>
       <find>闭</find>
       <find>BuyerUsers</find>
       <find>names</find>
       <find>up</find>
+      <find>resultset_type</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,12 +204,13 @@
       <list>
         <option value="$PROJECT_DIR$/../laravel5.7/public/index.php" />
         <option value="$PROJECT_DIR$/application/config.php" />
-        <option value="$PROJECT_DIR$/application/database.php" />
         <option value="$PROJECT_DIR$/application/index/controller/Hook.php" />
         <option value="$PROJECT_DIR$/application/index/model/Category.php" />
         <option value="$PROJECT_DIR$/application/route.php" />
-        <option value="$PROJECT_DIR$/application/index/controller/Index.php" />
         <option value="$PROJECT_DIR$/application/index/model/BuyerUsers.php" />
+        <option value="$PROJECT_DIR$/application/index/model/Goods.php" />
+        <option value="$PROJECT_DIR$/application/database.php" />
+        <option value="$PROJECT_DIR$/application/index/controller/Index.php" />
       </list>
     </option>
   </component>
@@ -298,7 +306,7 @@
       <workItem from="1587517620642" duration="48894000" />
       <workItem from="1587888717590" duration="105000" />
       <workItem from="1588141665865" duration="7076000" />
-      <workItem from="1588377841858" duration="6654000" />
+      <workItem from="1588377841858" duration="9694000" />
     </task>
     <task id="LOCAL-00001" summary="9hour">
       <created>1587518840804</created>
@@ -311,10 +319,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79264000" />
+    <option name="totallyTimeSpent" value="82304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17627347" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -472,13 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/behavior.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -528,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450">
-          <caret line="107" column="42" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2580">
@@ -545,20 +540,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/BuyerUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Cart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/index/model/Goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-477">
+          <caret line="107" column="42" selection-start-line="107" selection-start-column="42" selection-end-line="107" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/index/controller/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="522" column="36" selection-start-line="522" selection-start-column="36" selection-end-line="522" selection-end-column="36" />
+        <state relative-caret-position="193">
+          <caret line="530" column="63" lean-forward="true" selection-start-line="530" selection-start-column="63" selection-end-line="530" selection-end-column="63" />
           <folding>
             <element signature="e#40#71#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/index/model/BuyerUsers.php">
+    <entry file="file://$PROJECT_DIR$/application/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="185">
+          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
         </state>
       </provider>
     </entry>

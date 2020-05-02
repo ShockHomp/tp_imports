@@ -4,6 +4,8 @@ namespace app\index\controller;
 
 use app\index\model\BuyerUsers;
 use app\index\model\Category;
+use app\index\model\Cart;
+use app\index\model\Goods;
 use think\Request;
 use think\cache\driver\Memcache;
 use think\Db;
@@ -521,7 +523,17 @@ class Index
         }
         //动态设置config
 //        dump(Config::set('app_debug',true));
-        dump(BuyerUsers::get(2401)->toJson());//转换为JSON toArray() 变为数组
+//        dump(BuyerUsers::get(2401)->toJson());//转换为JSON toArray() 变为数组
+//        Goods::get(2401)->Cart();
+//        dump(Goods::with('Cart')->select());
+        $Goods=new Goods();
+        $id=9;
+        $result=Goods::with(['Cart'=>function($query) use($id){
+            $query->field('goods_id,user_openid')->select();
+        }])->field('id,name')->order(['id'=>'asc'])->select($id)->toArray();
+
+        dump($result);
+
 
     }
 
