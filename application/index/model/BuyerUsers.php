@@ -26,4 +26,5 @@ class BuyerUsers extends Model{
 
 
 
+
 }

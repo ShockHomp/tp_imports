@@ -521,6 +521,7 @@ class Index
         }
         //动态设置config
 //        dump(Config::set('app_debug',true));
+        dump(BuyerUsers::get(2401)->toJson());//转换为JSON toArray() 变为数组
 
     }
 
