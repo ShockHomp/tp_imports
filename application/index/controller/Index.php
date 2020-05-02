@@ -528,11 +528,14 @@ class Index
 //        dump(Goods::with('Cart')->select());
         $Goods=new Goods();
         $id=9;
-        $result=Goods::with(['Cart'=>function($query) use($id){
+        $where['id']=array('gt',8);
+        $result=$Goods::with(['Cart'=>function($query) use($id){
             $query->field('goods_id,user_openid')->select();
-        }])->field('id,name')->order(['id'=>'asc'])->select($id)->toArray();
+        }])->field('id,name')->where($where)->order(['id'=>'asc'])->select()->toArray();
 
-        dump($result);
+//        dump($result);
+        $resultView=Db::view('goods a','id,name')->view('cart b','id,user_openid,goods_id','a.id=b.goods_id')->select()->toArray();//推荐视图查询
+        dump($resultView);
 
 
     }
