@@ -540,5 +540,19 @@ class Index
 
     }
 
+    public function startTrans0503()
+    {
+        // 启动事务
+        Db::startTrans();
+        try{
+            Db::table('think_user')->find(1);//table 表名要写全
+            Db::table('think_user')->delete(1);
+            // 提交事务
+            Db::commit();
+        } catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+        }
+    }
 
 }
