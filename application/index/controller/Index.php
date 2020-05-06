@@ -4,6 +4,8 @@ namespace app\index\controller;
 
 use app\index\model\BuyerUsers;
 use app\index\model\Category;
+use app\index\model\Cart;
+use app\index\model\Goods;
 use think\Request;
 use think\cache\driver\Memcache;
 use think\Db;
@@ -109,7 +111,7 @@ class Index
         });
         //列多列数据，和数组中键值设置cloumn
         $columnDb = Db::table('shopping_buyer_users')->where('openid', $openid)->column('id,openid,shop_id');
-        dump($columnDb);
+//        dump($columnDb);
 //        dump($bbDb);
 
     }
@@ -513,5 +515,44 @@ class Index
         dump(Category::getCate()) ;
     }
 
+    public function tp0502()
+    {
+//        dump(Config::get('default_lang'));Config::has('default_lang');
+        if(config('?database')){  //还可以配置参数方式 查询配置项是否存在
+            echo '配置存在';
+        }
+        //动态设置config
+//        dump(Config::set('app_debug',true));
+//        dump(BuyerUsers::get(2401)->toJson());//转换为JSON toArray() 变为数组
+//        Goods::get(2401)->Cart();
+//        dump(Goods::with('Cart')->select());
+        $Goods=new Goods();
+        $id=9;
+        $where['id']=array('gt',8);
+        $result=$Goods::with(['Cart'=>function($query) use($id){
+            $query->field('goods_id,user_openid')->select();
+        }])->field('id,name')->where($where)->order(['id'=>'asc'])->select()->toArray();
+
+//        dump($result);
+        $resultView=Db::view('goods a','id,name')->view('cart b','id,user_openid,goods_id','a.id=b.goods_id')->select()->toArray();//推荐视图查询
+        dump($resultView);
+
+
+    }
+
+    public function startTrans0503()
+    {
+        // 启动事务
+        Db::startTrans();
+        try{
+            Db::table('think_user')->find(1);//table 表名要写全
+            Db::table('think_user')->delete(1);
+            // 提交事务
+            Db::commit();
+        } catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+        }
+    }
 
 }
