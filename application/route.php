@@ -52,7 +52,9 @@ Route::pattern([
 //Route::get('new/:id','index/index/index',['before_behavior'=>'\app\index\behavior\UserCheck']);
 //Route::get('new/:id','index/index/index',['callback'=>'my_check_fun']);//支持回调函数返回
 //Route::get('new/:name$','index/index/index',['merge_extra_vars'=>true]);
-//Route::get("new/:id", "\app\index\model\User@run");// 直接调用类里面的方法
+Route::get("new/:id", "\app\index\model\User@run");// 直接调用类里面的方法
+Route::rule('apptest', '\app\Test@test');
+
 //Route::resource('index','index/index');//支持RESTFUR 请求资源路由(相当于在控制器方法内直接建立了7个方法，分别为index,creat,save,read,edit update,delete)
 //Route::controller('index','index/index');//给index控制器设置快捷路由 (相当于直接建立了5个路由 getInfo getPhone ,postInfo ,putInfo,deleteInfo)
 //Route::any('new/:id/[:name]', 'index/Index/index?status=1&app_id=5', ['method' => 'post|get'], ['ext' => 'html'], ['before_behavior' => '\application\index\behavior\UserCheck']);//隐式传入参数在URL不显示
@@ -69,7 +71,7 @@ return [
 //Route::rule('test', 'index/Test/test','get');
 Route::rule('userTest', 'index/User/test');
 //制定类访问在app下面
-Route::get('apptest', '\app\Test@test');
+
 Route::get('apptestdata', '\app\Test@testdata');
 Route::get('myfunc/:lession', function ($lession) {
     // return '网站更新中.....';
